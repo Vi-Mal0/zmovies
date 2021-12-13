@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../model/movie.dart';
 import '../screens/movie_details_screen.dart';
 
-class VerticalListItem extends StatelessWidget {
+class viewallitembuilder extends StatelessWidget {
   final int index;
-  VerticalListItem(this.index);
+  viewallitembuilder(this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,13 @@ class VerticalListItem extends StatelessWidget {
             Navigator.of(context).pushNamed(
               MovieDetailsScreen.routeName,
               arguments: {
-                'id': bestMovieList[index].id,
-                'title': bestMovieList[index].title,
-                'imageUrl': bestMovieList[index].imageUrl,
-                'description': bestMovieList[index].description,
-                'rating': bestMovieList[index].rating,
-                'year': bestMovieList[index].year,
-                'duration': bestMovieList[index].duration,
+                'id': topRatedMovieList[index].id,
+                'title': topRatedMovieList[index].title,
+                'imageUrl': topRatedMovieList[index].imageUrl,
+                'description': topRatedMovieList[index].description,
+                'rating': topRatedMovieList[index].rating,
+                'year': topRatedMovieList[index].year,
+                'duration': topRatedMovieList[index].duration,
               },
             );
           },
@@ -31,7 +31,7 @@ class VerticalListItem extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Hero(
-                  tag: bestMovieList[index].id,
+                  tag: topRatedMovieList[index].id,
                   child: Container(
                     height: 150,
                     width: 100,
@@ -43,7 +43,7 @@ class VerticalListItem extends StatelessWidget {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                          bestMovieList[index].imageUrl,
+                          topRatedMovieList[index].imageUrl,
                         ),
                       ),
                     ),
@@ -56,7 +56,7 @@ class VerticalListItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        bestMovieList[index].title,
+                        topRatedMovieList[index].title,
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class VerticalListItem extends StatelessWidget {
                       Container(
                         width: 240,
                         child: Text(
-                          bestMovieList[index].description,
+                          topRatedMovieList[index].description,
                         ),
                       ),
                     ],
@@ -77,9 +77,6 @@ class VerticalListItem extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        SizedBox(
-          height: 10,
         ),
       ],
     );

@@ -104,12 +104,12 @@ class MovieDetailsScreen extends StatelessWidget {
                           size: 45,
                           color: Theme.of(context).primaryColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
                           routeArgs['year']!,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -130,12 +130,12 @@ class MovieDetailsScreen extends StatelessWidget {
                           size: 45,
                           color: Theme.of(context).primaryColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
                           '$rating/10',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -144,12 +144,12 @@ class MovieDetailsScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(
               routeArgs['description']!,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 height: 1.5,
               ),
@@ -167,48 +167,16 @@ class MovieDetailsScreen extends StatelessWidget {
                 bottom: 20,
               ),
               onPressed: () {},
-              color: Theme.of(context).primaryColor,
-              textColor: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Icon(
-                    Icons.play_circle_outline,
-                  ),
-                  Text(
-                    'Watch Trailer',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: RaisedButton(
-              padding: const EdgeInsets.only(
-                top: 20,
-                bottom: 20,
-              ),
-              onPressed: () {},
               color: Colors.yellowAccent,
               textColor: Colors.black,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const <Widget>[
                   Icon(
-                    Icons.check_circle_outline,
-                  ),
-                  Container(
-                    height: 5,
-                    width: 5,
+                    Icons.favorite,
                   ),
                   Text(
-                    'Buy Now',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                    'Add to Favorite'
                   ),
                 ],
               ),

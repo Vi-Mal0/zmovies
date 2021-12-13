@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zmovies/screens/viewall_screen.dart';
 
 import '../model/movie.dart';
 
@@ -7,22 +8,23 @@ import '../widget/vertical_list_item.dart';
 import '../widget/horizontal_list_item.dart';
 
 class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('ZmovieZ'),
+        title: const Text('movie cust'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.favorite),
             onPressed: () {},
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
+      body: Column(
+          children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -35,56 +37,60 @@ class DashboardScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  FlatButton(
-                    child: Text('View All'),
-                    onPressed: () {},
-                  ),
                 ],
               ),
             ),
             Container(
-              height: 280,
+              height: 276,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: movieList.length,
                 itemBuilder: (ctx, i) => HorizontalListItem(i),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Best of 2019',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  FlatButton(
-                    child: Text('View All'),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
             Container(
-              height: 500,
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: bestMovieList.length,
-                itemBuilder: (ctx, i) => VerticalListItem(i),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            'Best of 2019',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          FlatButton(
+                            child: const Text('View All'),
+                            onPressed:  () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const viewallscreen()),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 420,
+                      child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: bestMovieList.length,
+                        itemBuilder: (ctx, i) => VerticalListItem(i),
+                      ),
+                    ),
+                  ],
+                )
               ),
-            ),
-            SizedBox(height: 30,)
+            )
           ],
         ),
-      ),
     );
   }
 }
