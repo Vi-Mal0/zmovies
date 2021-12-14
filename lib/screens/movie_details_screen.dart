@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
+  var alreadySaved = false;
+
   static const routeName = '/movie-details';
 
   @override
   Widget build(BuildContext context) {
+
     final routeArgs =
         ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     final id = routeArgs['id'];
@@ -157,32 +160,6 @@ class MovieDetailsScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: Row(
-        children: <Widget>[
-          Expanded(
-            child: RaisedButton(
-              padding: const EdgeInsets.only(
-                top: 20,
-                bottom: 20,
-              ),
-              onPressed: () {},
-              color: Colors.yellowAccent,
-              textColor: Colors.black,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Icon(
-                    Icons.favorite,
-                  ),
-                  Text(
-                    'Add to Favorite'
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

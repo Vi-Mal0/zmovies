@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zmovies/model/ch_movie.dart';
 import 'package:zmovies/screens/movie_details_screen.dart';
-
-import '../model/movie.dart';
 
 class HorizontalListItem extends StatelessWidget {
   final int index;
@@ -34,7 +33,7 @@ class HorizontalListItem extends StatelessWidget {
               child: Hero(
                 tag: movieList[index].id,
                 child: Container(
-                  height: 200,
+                  height: 192,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     image: DecorationImage(

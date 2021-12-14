@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../model/movie.dart';
+import 'package:zmovies/model/ch_movie.dart';
 import '../screens/movie_details_screen.dart';
 
 class VerticalListItem extends StatelessWidget {

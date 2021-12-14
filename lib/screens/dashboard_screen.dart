@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:zmovies/model/ch_movie.dart';
+import 'package:zmovies/screens/favorites.dart';
 import 'package:zmovies/screens/viewall_screen.dart';
 
-import '../model/movie.dart';
-
-import '../widget/top_rated_list_item.dart';
 import '../widget/vertical_list_item.dart';
 import '../widget/horizontal_list_item.dart';
 
@@ -19,7 +18,13 @@ class DashboardScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.favorite),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const favoritesscreen()),
+              );
+            },
           ),
         ],
       ),
