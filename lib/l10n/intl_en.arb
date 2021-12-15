@@ -1,6 +1,6 @@
 {
-  "title" : "movie app",
-  "recommended" : "Recommended",
-  "best_of": "Best of 2019",
-  "viewall": "View All"
+  "title" : "title",
+  "recommended" : "recommended",
+  "best_of": "best of 2019",
+  "viewall": "viewall"
 }

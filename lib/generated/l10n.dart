@@ -50,40 +50,40 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `movie app`
+  /// `title`
   String get title {
     return Intl.message(
-      'movie app',
+      'title',
       name: 'title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Recommended`
+  /// `recommended`
   String get recommended {
     return Intl.message(
-      'Recommended',
+      'recommended',
       name: 'recommended',
       desc: '',
       args: [],
     );
   }
 
-  /// `Best of 2019`
+  /// `best of 2019`
   String get best_of {
     return Intl.message(
-      'Best of 2019',
+      'best of 2019',
       name: 'best_of',
       desc: '',
       args: [],
     );
   }
 
-  /// `View All`
+  /// `viewall`
   String get viewall {
     return Intl.message(
-      'View All',
+      'viewall',
       name: 'viewall',
       desc: '',
       args: [],
@@ -97,6 +97,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'gg'),
       Locale.fromSubtags(languageCode: 'zh'),
     ];
   }
